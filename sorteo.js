@@ -393,23 +393,14 @@ function showResults(assignments) {
         card.className = 'result-card';
 
         const flag = assignment.giverCountry === 'spain' ? '🇪🇸' : '🇻🇪';
-        const receiverFlag = assignment.receiverCountry === 'spain' ? '🇪🇸' : '🇻🇪';
         const link = generateLink(assignment);
         const safeName = assignment.giver.replace(/[^a-zA-Z0-9]/g, '_');
 
-        let compliceText = '';
-        if (assignment.complice) {
-            compliceText = ` (Cómplice: <strong>${assignment.complice}</strong>)`;
-        }
-
-        // Detectar si es pareja (tiene "y" en el nombre)
-        const isCouple = assignment.receiver.includes(' y ');
-        const coupleNote = isCouple ? ' <span style="color: #90EE90;">(Regalo doble)</span>' : '';
-
+        // NO mostrar a quién regala ni el cómplice (privacidad del organizador)
         card.innerHTML = `
             <h4>${flag} ${assignment.giver}</h4>
-            <p class="assignment">
-                Regala a: <strong>${assignment.receiver}</strong> ${receiverFlag}${coupleNote}${compliceText}
+            <p class="assignment" style="opacity: 0.7; font-size: 0.9rem;">
+                🔒 Información oculta - Solo visible en el enlace
             </p>
             <div class="link-container">
                 <input type="text" value="${link}" readonly id="link-${safeName}">
@@ -573,10 +564,6 @@ function exportarEnlaces() {
 
         const link = generateLink(assignment);
         texto += `👤 ${assignment.giver}\n`;
-        texto += `   Regala a: ${assignment.receiver}\n`;
-        if (assignment.complice) {
-            texto += `   Cómplice: ${assignment.complice}\n`;
-        }
         texto += `   🔗 ${link}\n\n`;
     });
 
