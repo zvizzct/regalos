@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Amigo Secreto - Familia Ramírez Pernia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .regalo-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gift-card {
+            background: linear-gradient(145deg, rgba(0, 100, 0, 0.9), rgba(0, 50, 0, 0.95));
+            border-radius: 30px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 4px solid var(--gold);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .gift-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .greeting {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .your-name {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gift-icon-large {
+            font-size: 5rem;
+            margin: 1.5rem 0;
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .instruction {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .secret-friend {
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: bold;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 215, 0, 0.15);
+            border-radius: 15px;
+            border: 2px solid var(--gold);
+        }
+
+        .secret-friend .country-flag {
+            width: 30px;
+            vertical-align: middle;
+            margin-left: 10px;
+            border-radius: 3px;
+        }
+
+        .complice-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px dashed rgba(255, 215, 0, 0.3);
+        }
+
+        .complice-section h3 {
+            color: #ff9800;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .complice-info {
+            background: rgba(255, 152, 0, 0.2);
+            border: 2px solid #ff9800;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+
+        .complice-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffb74d;
+            margin-bottom: 0.5rem;
+        }
+
+        .complice-explanation {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .no-complice {
+            background: rgba(76, 175, 80, 0.2);
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .no-complice h3 {
+            color: #4caf50;
+            margin-bottom: 0.5rem;
+        }
+
+        .rules-reminder {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .rules-reminder h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .rules-reminder ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .rules-reminder li {
+            padding: 0.25rem 0;
+        }
+
+        .rules-reminder li::before {
+            content: '✓ ';
+            color: var(--gold);
+        }
+
+        .event-details {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .event-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.25rem;
+            border-radius: 25px;
+        }
+
+        .event-detail img {
+            width: 25px;
+        }
+
+        .error-card {
+            background: rgba(244, 67, 54, 0.2);
+            border: 2px solid #f44336;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .error-card h2 {
+            color: #f44336;
+            margin-bottom: 1rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .loading .spinner {
+            font-size: 4rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--gold);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--gold);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-home:hover {
+            background: var(--gold);
+            color: var(--red-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <header>
+        <h1>🎄 Amigo Secreto 🎄</h1>
+        <h2>Familia Ramírez Pernia</h2>
+    </header>
+
+    <main class="regalo-container">
+        <div id="content">
+            <div class="loading">
+                <div class="spinner">🎁</div>
+                <p>Cargando tu asignación...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-decoration">
+            🎄 ⭐ 🎁 ⭐ 🎄
+        </div>
+        <p class="copyright">Familia Ramírez Pernia - Navidad 2025</p>
+    </footer>
+
+    <script>
+        // Decodificar datos de la URL (con soporte para caracteres especiales)
+        function decodeData() {
+            const params = new URLSearchParams(window.location.search);
+            const data = params.get('d');
+
+            if (!data) {
+                return null;
+            }
+
+            try {
+                const decoded = decodeURIComponent(escape(atob(data)));
+                return JSON.parse(decoded);
+            } catch (e) {
+                console.error('Error decodificando datos:', e);
+                return null;
+            }
+        }
+
+        // Renderizar la tarjeta de regalo
+        function renderGiftCard(data) {
+            const content = document.getElementById('content');
+
+            if (!data) {
+                content.innerHTML = `
+                    <div class="error-card">
+                        <h2>❌ Enlace Inválido</h2>
+                        <p>Este enlace no es válido o ha expirado.</p>
+                        <p>Contacta con el organizador para recibir tu enlace correcto.</p>
+                        <a href="index.html" class="back-home">Ir a la página principal</a>
+                    </div>
+                `;
+                return;
+            }
+
+            const { giver, receiver, complice, giverCountry, receiverCountry } = data;
+            const needsComplice = giverCountry === 'venezuela' && receiverCountry === 'spain';
+            const giverFlag = giverCountry === 'spain' ? 'es' : 've';
+            const receiverFlag = receiverCountry === 'spain' ? 'es' : 've';
+            const receiverCountryName = receiverCountry === 'spain' ? 'España' : 'Venezuela';
+
+            // Detectar si es pareja (regalo doble)
+            const isCouple = receiver.includes(' y ');
+
+            let compliceHTML = '';
+            let coupleHTML = '';
+
+            // Mostrar nota de pareja si aplica
+            if (isCouple) {
+                coupleHTML = `
+                    <div style="background: rgba(144, 238, 144, 0.2); border: 2px solid #90EE90; border-radius: 10px; padding: 1rem; margin-top: 1rem;">
+                        <p style="color: #90EE90; font-weight: bold; margin: 0;">
+                            👨‍👩‍👦 ¡Regalo doble! Tienes que regalar a ambos.
+                        </p>
+                    </div>
+                `;
+            }
+
+            if (needsComplice && complice) {
+                compliceHTML = `
+                    <div class="complice-section">
+                        <h3>📱 Necesitas contactar a tu cómplice</h3>
+                        <div class="complice-info">
+                            <div class="complice-name">${complice}</div>
+                            <p class="complice-explanation">
+                                Como <strong>${receiver}</strong> está en España, necesitas que
+                                <strong>${complice}</strong> compre el regalo allá.<br><br>
+                                <strong>¿Qué hacer?</strong><br>
+                                1. Contacta a ${complice} y dile qué regalo quieres para ${receiver}<br>
+                                2. ${complice} te dirá qué comprar para su amigo secreto de Venezuela<br>
+                                3. ¡Tú compras ese regalo en Venezuela!
+                            </p>
+                        </div>
+                    </div>
+                `;
+            } else if (giverCountry === 'spain') {
+                compliceHTML = `
+                    <div class="complice-section">
+                        <h3>📱 Eres cómplice de alguien</h3>
+                        <div class="complice-info">
+                            <p class="complice-explanation">
+                                Alguien de Venezuela te contactará para pedirte que compres un regalo
+                                para alguien de España.<br><br>
+                                <strong>Cuando te contacten:</strong><br>
+                                1. Ellos te dirán qué regalo comprar para su amigo secreto<br>
+                                2. Tú les dices que compren algo para <strong>${receiver}</strong> (tu amigo secreto)<br>
+                                3. ¡Ambos compran en su país!
+                            </p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                compliceHTML = `
+                    <div class="no-complice">
+                        <h3>✅ ¡Sin complicaciones!</h3>
+                        <p>Tu amigo secreto está en Venezuela, así que puedes comprar y entregar el regalo directamente.</p>
+                    </div>
+                `;
+            }
+
+            content.innerHTML = `
+                <div class="gift-card">
+                    <p class="greeting">¡Hola!</p>
+                    <h2 class="your-name">${giver}</h2>
+
+                    <div class="gift-icon-large">${isCouple ? '🎁🎁' : '🎁'}</div>
+
+                    <p class="instruction">${isCouple ? 'Tus amigos secretos son:' : 'Tu amigo secreto es:'}</p>
+                    <div class="secret-friend">
+                        ${receiver}
+                        <img src="https://flagcdn.com/w40/${receiverFlag}.png" alt="${receiverCountryName}" class="country-flag">
+                    </div>
+
+                    ${coupleHTML}
+                    ${compliceHTML}
+
+                    <div class="rules-reminder">
+                        <h4>📋 Recuerda:</h4>
+                        <ul>
+                            <li>Mantén el secreto hasta el día del evento</li>
+                            <li>Premio de $30 al regalo más creativo</li>
+                            <li>Solo tu cómplice puede saber a quién regalas</li>
+                        </ul>
+                    </div>
+
+                    <div class="event-details">
+                        <div class="event-detail">
+                            <span>📅</span>
+                            <span>24 de Diciembre</span>
+                        </div>
+                        <div class="event-detail">
+                            <img src="https://flagcdn.com/w20/ve.png" alt="VE">
+                            <span>7:00 PM</span>
+                        </div>
+                        <div class="event-detail">
+                            <img src="https://flagcdn.com/w20/es.png" alt="ES">
+                            <span>12:00 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="index.html" class="back-home">Ver reglas completas</a>
+                </div>
+            `;
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const data = decodeData();
+                renderGiftCard(data);
+            }, 500);
+        });
+    </script>
+</body>
+</html>

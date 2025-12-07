@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Secreto - Familia Ramírez Pernia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Copos de nieve animados -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <header>
+        <h1>🎄 Amigo Secreto 🎄</h1>
+        <h2>Familia Ramírez Pernia</h2>
+        <div class="event-info">
+            <div class="date">
+                <span class="icon">📅</span>
+                <span>24 de Diciembre</span>
+            </div>
+            <div class="times">
+                <div class="time">
+                    <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" class="flag">
+                    <span>7:00 PM</span>
+                </div>
+                <div class="time">
+                    <img src="https://flagcdn.com/w40/es.png" alt="España" class="flag">
+                    <span>12:00 AM</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Botón para organizador -->
+    <div style="text-align: center; margin: 1rem 0;">
+        <a href="sorteo.html" style="display: inline-block; background: linear-gradient(145deg, var(--gold), #daa520); color: #8b0000; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4); transition: transform 0.3s ease;">
+            🎲 Panel del Organizador - Hacer Sorteo
+        </a>
+    </div>
+
+    <main>
+        <!-- Sección de Reglas -->
+        <section class="rules-section">
+            <h2>📜 Las Reglas</h2>
+            <div class="rules-container">
+                <div class="rule-card">
+                    <div class="rule-icon">🌍</div>
+                    <h3>Familia Internacional</h3>
+                    <p>Somos familia en <strong>España</strong> y <strong>Venezuela</strong></p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">🚫</div>
+                    <h3>Regla Principal</h3>
+                    <p>Los de España <strong>NO</strong> se regalan entre sí</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">🤝</div>
+                    <h3>Sistema de Cómplices</h3>
+                    <p>Si te toca alguien de España, necesitas un <strong>cómplice</strong></p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">🤫</div>
+                    <h3>Secreto</h3>
+                    <p>Solo tu cómplice sabe a quién regalas. ¡Mantén el misterio!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sistema de Cómplices -->
+        <section class="complices-section">
+            <h2>🕵️ Sistema de Cómplices en España</h2>
+            <p class="section-desc">Si te toca regalar a alguien de España, contacta con su cómplice asignado:</p>
+
+            <div class="complices-grid">
+                <!-- Grupo 1: Triángulo -->
+                <div class="complice-group">
+                    <h3>Grupo 1</h3>
+                    <div class="triangle-container">
+                        <div class="person-node" data-person="paola">
+                            <div class="avatar">👩</div>
+                            <span>Paola</span>
+                        </div>
+                        <div class="person-node" data-person="yolimar">
+                            <div class="avatar">👩</div>
+                            <span>Yolimar</span>
+                        </div>
+                        <div class="person-node" data-person="victor">
+                            <div class="avatar">👨</div>
+                            <span>Victor</span>
+                        </div>
+                        <svg class="connections" viewBox="0 0 200 180">
+                            <defs>
+                                <marker id="arrowhead1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#ffd700"/>
+                                </marker>
+                            </defs>
+                            <path d="M 100 30 L 40 140" stroke="#ffd700" stroke-width="2" marker-end="url(#arrowhead1)"/>
+                            <path d="M 40 150 L 160 150" stroke="#ffd700" stroke-width="2" marker-end="url(#arrowhead1)"/>
+                            <path d="M 160 140 L 105 35" stroke="#ffd700" stroke-width="2" marker-end="url(#arrowhead1)"/>
+                        </svg>
+                    </div>
+                    <div class="complice-rules">
+                        <p>Si te tocó <strong class="name-paola">PAOLA</strong> → habla con <strong class="name-yolimar">YOLIMAR</strong></p>
+                        <p>Si te tocó <strong class="name-yolimar">YOLIMAR</strong> → habla con <strong class="name-victor">VICTOR</strong></p>
+                        <p>Si te tocó <strong class="name-victor">VICTOR</strong> → habla con <strong class="name-paola">PAOLA</strong></p>
+                    </div>
+                </div>
+
+                <!-- Grupo 2: Par -->
+                <div class="complice-group">
+                    <h3>Grupo 2</h3>
+                    <div class="pair-container">
+                        <div class="person-node" data-person="vanessa">
+                            <div class="avatar">👩</div>
+                            <span>Vanessa</span>
+                        </div>
+                        <div class="double-arrow">⟷</div>
+                        <div class="person-node" data-person="geral">
+                            <div class="avatar">👨</div>
+                            <span>Geral</span>
+                        </div>
+                    </div>
+                    <div class="complice-rules">
+                        <p>Si te tocó <strong class="name-vanessa">VANESSA</strong> → habla con <strong class="name-geral">GERAL</strong></p>
+                        <p>Si te tocó <strong class="name-geral">GERAL</strong> → habla con <strong class="name-vanessa">VANESSA</strong></p>
+                    </div>
+                </div>
+
+                <!-- Grupo 3: Par -->
+                <div class="complice-group">
+                    <h3>Grupo 3</h3>
+                    <div class="pair-container">
+                        <div class="person-node" data-person="edimar">
+                            <div class="avatar">👩</div>
+                            <span>Edimar</span>
+                        </div>
+                        <div class="double-arrow">⟷</div>
+                        <div class="person-node" data-person="pedro">
+                            <div class="avatar">👨</div>
+                            <span>Pedro</span>
+                        </div>
+                    </div>
+                    <div class="complice-rules">
+                        <p>Si te tocó <strong class="name-edimar">EDIMAR</strong> → habla con <strong class="name-pedro">PEDRO</strong></p>
+                        <p>Si te tocó <strong class="name-pedro">PEDRO</strong> → habla con <strong class="name-edimar">EDIMAR</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejemplo Interactivo -->
+        <section class="example-section">
+            <h2>🎁 Ejemplo Interactivo</h2>
+            <p class="section-desc">Selecciona un escenario para ver cómo funciona el sistema:</p>
+
+            <div class="scenario-buttons">
+                <button class="scenario-btn active" data-scenario="1">
+                    <span class="scenario-title">Escenario 1</span>
+                    <span class="scenario-desc">Venezuela → España</span>
+                </button>
+                <button class="scenario-btn" data-scenario="2">
+                    <span class="scenario-title">Escenario 2</span>
+                    <span class="scenario-desc">Otro ejemplo VEN → ESP</span>
+                </button>
+                <button class="scenario-btn" data-scenario="3">
+                    <span class="scenario-title">Escenario 3</span>
+                    <span class="scenario-desc">Venezuela → Venezuela</span>
+                </button>
+            </div>
+
+            <div class="example-container" id="example-container">
+                <!-- El contenido se genera con JavaScript -->
+            </div>
+
+            <div class="step-navigation">
+                <button class="nav-btn" id="prev-btn" disabled>← Anterior</button>
+                <div class="step-indicators" id="step-indicators"></div>
+                <button class="nav-btn" id="next-btn">Siguiente →</button>
+            </div>
+        </section>
+
+        <!-- Participantes -->
+        <section class="participants-section">
+            <h2>👥 Participantes</h2>
+            <div class="countries-container">
+                <div class="country-card spain">
+                    <div class="country-header">
+                        <img src="https://flagcdn.com/w80/es.png" alt="España" class="country-flag">
+                        <h3>España (7)</h3>
+                    </div>
+                    <ul class="participants-list">
+                        <li><span class="avatar-small">👩</span> Yolimar</li>
+                        <li><span class="avatar-small">👨</span> Víctor</li>
+                        <li><span class="avatar-small">👩</span> Paola</li>
+                        <li><span class="avatar-small">👨</span> Geral</li>
+                        <li><span class="avatar-small">👩</span> Vanesa</li>
+                        <li><span class="avatar-small">👩</span> Edimar</li>
+                        <li><span class="avatar-small">👨</span> Pedro</li>
+                    </ul>
+                </div>
+                <div class="country-card venezuela">
+                    <div class="country-header">
+                        <img src="https://flagcdn.com/w80/ve.png" alt="Venezuela" class="country-flag">
+                        <h3>Venezuela (14)</h3>
+                    </div>
+                    <ul class="participants-list">
+                        <li><span class="avatar-small">👨</span> Ángel</li>
+                        <li><span class="avatar-small">👨‍👩‍👦</span> Carolina y Dylan</li>
+                        <li><span class="avatar-small">👩</span> Daylin</li>
+                        <li><span class="avatar-small">👩</span> Elodia</li>
+                        <li><span class="avatar-small">👩</span> Fanny</li>
+                        <li><span class="avatar-small">👩</span> Jennifer</li>
+                        <li><span class="avatar-small">👨‍👩‍👦</span> Junior y Simón</li>
+                        <li><span class="avatar-small">👩</span> Marilín</li>
+                        <li><span class="avatar-small">👩</span> Miriam</li>
+                        <li><span class="avatar-small">👨</span> Robert</li>
+                        <li><span class="avatar-small">👨</span> Romer</li>
+                        <li><span class="avatar-small">👨</span> Roswell</li>
+                        <li><span class="avatar-small">👨‍👩‍👦</span> Royer y Dereck</li>
+                        <li><span class="avatar-small">👨</span> Santiago</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premio -->
+        <section class="prize-section">
+            <div class="prize-card">
+                <div class="prize-icon">🏆</div>
+                <h3>¡Premio al Mejor Regalo!</h3>
+                <p class="prize-amount">$30 USD</p>
+                <p>Para el regalo más personalizado y creativo</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Cualquier duda o inconveniente contactar con <strong>Paola</strong></p>
+        <div class="footer-decoration">
+            🎄 ⭐ 🎁 ⭐ 🎄
+        </div>
+        <p class="copyright">Familia Ramírez Pernia - Navidad 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

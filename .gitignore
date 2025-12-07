@@ -1,0 +1,9 @@
+# Imágenes originales de WhatsApp
+*.jpeg
+*.jpg
+
+# Carpeta de Claude
+.claude/
+
+# Archivos del sistema
+.DS_Store
