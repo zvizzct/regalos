@@ -404,11 +404,36 @@
 
             if (!data) {
                 content.innerHTML = `
-                    <div class="error-card">
-                        <h2>❌ Enlace Inválido</h2>
-                        <p>Este enlace no es válido o ha expirado.</p>
-                        <p>Contacta con el organizador para recibir tu enlace correcto.</p>
-                        <a href="index.html" class="back-home">Ir a la página principal</a>
+                    <div class="gift-card" style="background: linear-gradient(145deg, rgba(139, 0, 0, 0.9), rgba(100, 0, 0, 0.95));">
+                        <div class="gift-icon-large">🎄</div>
+                        <h2 class="your-name">Amigo Secreto</h2>
+                        <p style="font-size: 1.1rem; margin: 1.5rem 0; line-height: 1.6;">
+                            Familia Ramírez Pernia<br>
+                            Navidad 2025
+                        </p>
+                        <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 15px; margin-top: 1.5rem;">
+                            <p style="margin-bottom: 1rem;">🔒 <strong>Necesitas un enlace válido</strong></p>
+                            <p style="font-size: 0.9rem; opacity: 0.9;">
+                                Si participas en el amigo secreto, deberías haber recibido tu enlace personal por WhatsApp.
+                            </p>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 1rem;">
+                                ¿No lo tienes? Contacta con <strong>Paola</strong>.
+                            </p>
+                        </div>
+                        <div class="event-details" style="margin-top: 2rem;">
+                            <div class="event-detail">
+                                <span>📅</span>
+                                <span>24 de Diciembre</span>
+                            </div>
+                            <div class="event-detail">
+                                <img src="https://flagcdn.com/w20/ve.png" alt="VE">
+                                <span>7:00 PM</span>
+                            </div>
+                            <div class="event-detail">
+                                <img src="https://flagcdn.com/w20/es.png" alt="ES">
+                                <span>12:00 AM</span>
+                            </div>
+                        </div>
                     </div>
                 `;
                 return;
@@ -518,10 +543,6 @@
                             <span>12:00 AM</span>
                         </div>
                     </div>
-                </div>
-
-                <div style="text-align: center;">
-                    <a href="index.html" class="back-home">Ver reglas completas</a>
                 </div>
             `;
         }

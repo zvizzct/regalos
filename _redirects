@@ -1,0 +1,17 @@
+# Solo permitir mi-regalo.html con parámetro
+/mi-regalo.html    /mi-regalo.html    200
+
+# Página de admin oculta (cambiar esta URL secreta)
+/admin-paola-2025    /sorteo.html    200
+
+# Bloquear acceso directo a sorteo
+/sorteo.html    /mi-regalo.html    302
+/sorteo    /mi-regalo.html    302
+
+# Redirigir index a mi-regalo
+/index.html    /mi-regalo.html    302
+/    /mi-regalo.html    302
+
+# Bloquear otros archivos
+/test.html    /mi-regalo.html    302
+/script.js    /mi-regalo.html    302
