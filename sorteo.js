@@ -437,8 +437,15 @@ function generateLink(assignment) {
     };
 
     const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
-    const baseUrl = window.location.href.replace('sorteo.html', 'mi-regalo.html');
-    return `${baseUrl}?d=${encoded}`;
+
+    // Obtener la URL base correctamente (funciona con y sin .html)
+    const origin = window.location.origin;
+    const pathname = window.location.pathname;
+
+    // Construir URL base quitando sorteo.html o /sorteo
+    let basePath = pathname.replace(/sorteo\.html$/, '').replace(/sorteo$/, '').replace(/\/$/, '');
+
+    return `${origin}${basePath}/mi-regalo.html?d=${encoded}`;
 }
 
 // Copiar enlace
