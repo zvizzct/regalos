@@ -1,11 +1,13 @@
-/* Variables de colores navideños */
+/* Variables de colores venezolanos - Bandera de Venezuela */
 :root {
-    --red-primary: #c41e3a;
-    --red-dark: #8b0000;
-    --green-primary: #228b22;
-    --green-dark: #006400;
-    --gold: #ffd700;
-    --gold-dark: #daa520;
+    --yellow-primary: #FFCC00;
+    --yellow-bright: #FDB913;
+    --blue-primary: #003893;
+    --blue-dark: #00247D;
+    --red-primary: #CF142B;
+    --red-dark: #8B0000;
+    --gold: #FFCC00;
+    --gold-dark: #FDB913;
     --white: #fffafa;
     --cream: #fff8dc;
     --shadow: rgba(0, 0, 0, 0.3);
@@ -20,14 +22,14 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--red-primary) 0%, var(--red-dark) 100%);
+    background: linear-gradient(135deg, var(--yellow-primary) 0%, var(--blue-primary) 50%, var(--red-primary) 100%);
     min-height: 100vh;
     color: var(--white);
     overflow-x: hidden;
 }
 
-/* Copos de nieve animados */
-.snowflakes {
+/* Elementos venezolanos flotantes */
+.venezuelan-elements {
     position: fixed;
     top: 0;
     left: 0;
@@ -38,34 +40,41 @@ body {
     overflow: hidden;
 }
 
-.snowflake {
+.floating-item {
     position: absolute;
     top: -50px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.5rem;
-    animation: fall linear infinite;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    color: rgba(255, 204, 0, 0.9);
+    font-size: 2rem;
+    animation: floatVenezuelan linear infinite;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+    filter: drop-shadow(0 0 5px rgba(0, 56, 147, 0.5));
 }
 
-.snowflake:nth-child(1) { left: 5%; animation-duration: 10s; animation-delay: 0s; font-size: 1.2rem; }
-.snowflake:nth-child(2) { left: 15%; animation-duration: 12s; animation-delay: 2s; font-size: 1.8rem; }
-.snowflake:nth-child(3) { left: 25%; animation-duration: 8s; animation-delay: 4s; font-size: 1rem; }
-.snowflake:nth-child(4) { left: 35%; animation-duration: 14s; animation-delay: 1s; font-size: 1.5rem; }
-.snowflake:nth-child(5) { left: 45%; animation-duration: 9s; animation-delay: 3s; font-size: 2rem; }
-.snowflake:nth-child(6) { left: 55%; animation-duration: 11s; animation-delay: 5s; font-size: 1.3rem; }
-.snowflake:nth-child(7) { left: 65%; animation-duration: 13s; animation-delay: 0.5s; font-size: 1.7rem; }
-.snowflake:nth-child(8) { left: 75%; animation-duration: 10s; animation-delay: 2.5s; font-size: 1.1rem; }
-.snowflake:nth-child(9) { left: 85%; animation-duration: 15s; animation-delay: 4.5s; font-size: 1.9rem; }
-.snowflake:nth-child(10) { left: 95%; animation-duration: 7s; animation-delay: 1.5s; font-size: 1.4rem; }
+.floating-item:nth-child(1) { left: 5%; animation-duration: 12s; animation-delay: 0s; font-size: 2.5rem; }
+.floating-item:nth-child(2) { left: 15%; animation-duration: 10s; animation-delay: 2s; font-size: 2rem; }
+.floating-item:nth-child(3) { left: 25%; animation-duration: 14s; animation-delay: 4s; font-size: 1.8rem; }
+.floating-item:nth-child(4) { left: 35%; animation-duration: 11s; animation-delay: 1s; font-size: 2.2rem; }
+.floating-item:nth-child(5) { left: 45%; animation-duration: 13s; animation-delay: 3s; font-size: 2.8rem; }
+.floating-item:nth-child(6) { left: 55%; animation-duration: 9s; animation-delay: 5s; font-size: 2rem; }
+.floating-item:nth-child(7) { left: 65%; animation-duration: 15s; animation-delay: 0.5s; font-size: 2.3rem; }
+.floating-item:nth-child(8) { left: 75%; animation-duration: 12s; animation-delay: 2.5s; font-size: 2rem; }
+.floating-item:nth-child(9) { left: 85%; animation-duration: 10s; animation-delay: 4.5s; font-size: 2.6rem; }
+.floating-item:nth-child(10) { left: 90%; animation-duration: 13s; animation-delay: 1.5s; font-size: 2.1rem; }
+.floating-item:nth-child(11) { left: 10%; animation-duration: 11s; animation-delay: 3.5s; font-size: 1.9rem; }
+.floating-item:nth-child(12) { left: 95%; animation-duration: 14s; animation-delay: 6s; font-size: 2.4rem; }
 
-@keyframes fall {
+@keyframes floatVenezuelan {
     0% {
-        transform: translateY(-50px) rotate(0deg);
+        transform: translateY(-50px) rotate(0deg) scale(1);
+        opacity: 0.9;
+    }
+    50% {
         opacity: 1;
+        transform: translateY(50vh) rotate(180deg) scale(1.2);
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0.3;
+        transform: translateY(100vh) rotate(360deg) scale(0.8);
+        opacity: 0.4;
     }
 }
 
@@ -84,8 +93,8 @@ header h1 {
 }
 
 @keyframes glow {
-    from { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--gold); }
-    to { text-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold-dark), 0 0 40px var(--gold-dark); }
+    from { text-shadow: 0 0 10px var(--yellow-primary), 0 0 20px var(--yellow-primary), 0 0 30px var(--yellow-bright); }
+    to { text-shadow: 0 0 20px var(--yellow-bright), 0 0 30px var(--yellow-primary), 0 0 40px var(--blue-primary); }
 }
 
 header h2 {
@@ -169,13 +178,13 @@ section h2 {
 }
 
 .rule-card {
-    background: linear-gradient(145deg, var(--green-primary), var(--green-dark));
+    background: linear-gradient(145deg, var(--blue-primary), var(--blue-dark));
     border-radius: 20px;
     padding: 1.5rem;
     text-align: center;
     box-shadow: 0 10px 30px var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid var(--gold);
+    border: 3px solid var(--yellow-primary);
 }
 
 .rule-card:hover {
@@ -216,7 +225,7 @@ section h2 {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 1.5rem;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--yellow-primary);
 }
 
 .complice-group h3 {
@@ -271,7 +280,7 @@ section h2 {
 
 .double-arrow {
     font-size: 2rem;
-    color: var(--gold);
+    color: var(--yellow-primary);
     animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -290,14 +299,14 @@ section h2 {
 .avatar {
     width: 60px;
     height: 60px;
-    background: linear-gradient(145deg, var(--cream), var(--white));
+    background: linear-gradient(145deg, var(--yellow-bright), var(--white));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     box-shadow: 0 5px 15px var(--shadow);
-    border: 3px solid var(--gold);
+    border: 3px solid var(--blue-primary);
     transition: transform 0.3s ease;
 }
 
@@ -314,7 +323,7 @@ section h2 {
 .complice-rules {
     margin-top: 1.5rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    border-top: 1px solid rgba(255, 204, 0, 0.4);
 }
 
 .complice-rules p {
@@ -333,10 +342,10 @@ section h2 {
 
 /* Sección de Ejemplo Interactivo */
 .example-section {
-    background: linear-gradient(145deg, var(--green-dark), #004d00);
+    background: linear-gradient(145deg, var(--blue-dark), var(--blue-primary));
     border-radius: 30px;
     padding: 2rem;
-    border: 4px solid var(--gold);
+    border: 4px solid var(--yellow-primary);
 }
 
 .scenario-buttons {
@@ -349,7 +358,7 @@ section h2 {
 
 .scenario-btn {
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid var(--gold);
+    border: 2px solid var(--yellow-primary);
     color: var(--white);
     padding: 1rem 1.5rem;
     border-radius: 15px;
@@ -362,13 +371,14 @@ section h2 {
 }
 
 .scenario-btn:hover {
-    background: rgba(255, 215, 0, 0.2);
+    background: rgba(255, 204, 0, 0.3);
     transform: scale(1.05);
 }
 
 .scenario-btn.active {
-    background: var(--gold);
-    color: var(--red-dark);
+    background: var(--yellow-primary);
+    color: var(--blue-dark);
+    font-weight: bold;
 }
 
 .scenario-title {
@@ -402,7 +412,7 @@ section h2 {
 .step-title {
     text-align: center;
     font-size: 1.5rem;
-    color: var(--gold);
+    color: var(--yellow-primary);
     margin-bottom: 1.5rem;
 }
 
@@ -416,17 +426,17 @@ section h2 {
 }
 
 .person-card {
-    background: linear-gradient(145deg, #2d5a2d, #1a3d1a);
+    background: linear-gradient(145deg, var(--blue-primary), var(--blue-dark));
     border-radius: 15px;
     padding: 1.5rem;
     text-align: center;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--yellow-primary);
     min-width: 120px;
     transition: all 0.3s ease;
 }
 
 .person-card.highlight {
-    box-shadow: 0 0 30px var(--gold);
+    box-shadow: 0 0 30px var(--yellow-primary);
     transform: scale(1.05);
 }
 
@@ -459,14 +469,14 @@ section h2 {
 
 .arrow {
     font-size: 2.5rem;
-    color: var(--gold);
+    color: var(--yellow-primary);
     animation: arrowPulse 1s ease-in-out infinite;
 }
 
 .arrow-label {
     font-size: 0.8rem;
-    background: var(--gold);
-    color: var(--red-dark);
+    background: var(--yellow-primary);
+    color: var(--blue-dark);
     padding: 0.25rem 0.75rem;
     border-radius: 10px;
     margin-top: 0.5rem;
@@ -489,7 +499,7 @@ section h2 {
 }
 
 .step-description strong {
-    color: var(--gold);
+    color: var(--yellow-primary);
 }
 
 .speech-bubble {
@@ -540,8 +550,8 @@ section h2 {
 }
 
 .nav-btn {
-    background: var(--gold);
-    color: var(--red-dark);
+    background: var(--yellow-primary);
+    color: var(--blue-dark);
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
@@ -575,8 +585,9 @@ section h2 {
 }
 
 .step-dot.active {
-    background: var(--gold);
+    background: var(--yellow-primary);
     transform: scale(1.3);
+    box-shadow: 0 0 10px var(--yellow-bright);
 }
 
 /* Sección de Participantes */
@@ -591,7 +602,7 @@ section h2 {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     overflow: hidden;
-    border: 3px solid var(--gold);
+    border: 3px solid var(--yellow-primary);
 }
 
 .country-header {
@@ -608,7 +619,8 @@ section h2 {
 }
 
 .country-card.venezuela .country-header {
-    background: linear-gradient(145deg, #003399, #001a4d);
+    background: linear-gradient(145deg, var(--yellow-primary), var(--yellow-bright));
+    color: var(--blue-dark);
 }
 
 .country-flag {
@@ -651,18 +663,19 @@ section h2 {
 }
 
 .prize-card {
-    background: linear-gradient(145deg, var(--gold), var(--gold-dark));
-    color: var(--red-dark);
+    background: linear-gradient(145deg, var(--yellow-primary), var(--yellow-bright));
+    color: var(--blue-dark);
     border-radius: 30px;
     padding: 2rem 3rem;
     text-align: center;
-    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 204, 0, 0.5);
     animation: shine 3s ease-in-out infinite;
+    border: 3px solid var(--red-primary);
 }
 
 @keyframes shine {
-    0%, 100% { box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4); }
-    50% { box-shadow: 0 15px 60px rgba(255, 215, 0, 0.8); }
+    0%, 100% { box-shadow: 0 15px 40px rgba(255, 204, 0, 0.5); }
+    50% { box-shadow: 0 15px 60px rgba(0, 56, 147, 0.8); }
 }
 
 .prize-icon {
@@ -752,24 +765,24 @@ footer {
     }
 }
 
-/* Decoraciones adicionales */
+/* Decoraciones adicionales - Luces tricolor venezolano */
 .christmas-lights {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 5px;
+    height: 8px;
     background: repeating-linear-gradient(
         90deg,
-        #ff0000 0px, #ff0000 20px,
-        #00ff00 20px, #00ff00 40px,
-        #ffff00 40px, #ffff00 60px,
-        #0000ff 60px, #0000ff 80px
+        var(--yellow-primary) 0px, var(--yellow-primary) 30px,
+        var(--blue-primary) 30px, var(--blue-primary) 60px,
+        var(--red-primary) 60px, var(--red-primary) 90px
     );
-    animation: lightsMove 2s linear infinite;
+    animation: lightsMove 3s linear infinite;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes lightsMove {
     0% { background-position: 0 0; }
-    100% { background-position: 80px 0; }
+    100% { background-position: 90px 0; }
 }
